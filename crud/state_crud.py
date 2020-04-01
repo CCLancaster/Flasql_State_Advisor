@@ -11,7 +11,7 @@ def get_all_states():
     return jsonify(results)
 
 # Show
-def get_state():
+def get_state(id):
     state = State.query.get(id)
     if state: 
         return jsonify(state.as_dict())

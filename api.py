@@ -20,3 +20,19 @@ def state_index_create():
             abbr=request.form['abbr'], 
             motto=request.form['motto']
             )
+
+@app.route('/states/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+def state_show_update_delete(id):
+    if request.method == 'GET':
+        return get_state(id)
+    if request.method == 'PUT':
+        return update_state(
+            id=id,
+            name=request.form['name'], 
+            capital=request.form['capital'], 
+            date_est=request.form['date_est'], 
+            abbr=request.form['abbr'], 
+            motto=request.form['motto']
+        )
+    if request.method == 'DELETE':
+        return destroy_state(id)
