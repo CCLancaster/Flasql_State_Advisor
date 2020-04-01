@@ -1,5 +1,5 @@
 from flask import jsonify, redirect
-from models import db, User
+from models import db, State
 
 # Index
 def get_all_states():
